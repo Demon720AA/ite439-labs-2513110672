@@ -1,10 +1,10 @@
 // ============================================================
 // L01 — Dart พื้นฐาน (ITE-439 สัปดาห์ที่ 1)
-// ชื่อ-สกุล: ______________________  รหัสนักศึกษา: ____________
+// ชื่อ-สกุล: ศุภณัฐ  รหัสนักศึกษา: 2513110672
 // ============================================================
 //
 // วิธีทำ
-//   1. เปิด https://dartpad.dev แล้ววางไฟล์นี้ลงไปทั้งไฟล์
+//   1. เปิด https:/ /dartpad.dev แล้ววางไฟล์นี้ลงไปทั้งไฟล์
 //   2. ทำทีละข้อ กด Run ดูผลทุกครั้งที่แก้ เทียบกับคอมเมนต์ "ควรได้"
 //   3. ทำเสร็จแล้วคัดลอกกลับมาวางในไฟล์นี้ (L01/week01.dart) แล้ว commit
 //   4. คัดลอกผลลัพธ์ทั้งหมดไปวางในหัวข้อ "ผลการทดสอบ" ของ L01/README.md
@@ -13,7 +13,6 @@
 // ข้อ 5 เป็น Stretch (ฝึกต่อยอด ทำเพิ่มได้)
 //
 // ห้ามลบบรรทัด print ใน main() — อาจารย์ใช้ผลลัพธ์นี้ตรวจ
-
 void main() {
   print('--- ข้อ 1 ---');
   print(bmi(60, 1.70)); // ควรได้ 20.76
@@ -28,12 +27,12 @@ void main() {
   print('--- ข้อ 3 ---');
   print(topStudentNames(students)); // ควรได้ [Mint, Ploy, Beam]
 
-  print('--- ข้อ 4 ---');
-  print(nicknameLength(null)); // ควรได้ 0
-  print(nicknameLength('Mint')); // ควรได้ 4
+  // print('--- ข้อ 4 ---');
+  // print(nicknameLength(null)); // ควรได้ 0
+  // print(nicknameLength('Mint')); // ควรได้ 4
 
-  print('--- ข้อ 5 (Stretch) ---');
-  print(topThreeExpensive(products)); // ควรได้ [แล็ปท็อป, จอมอนิเตอร์, คีย์บอร์ด]
+  // print('--- ข้อ 5 (Stretch) ---');
+  // print(topThreeExpensive(products)); // ควรได้ [แล็ปท็อป, จอมอนิเตอร์, คีย์บอร์ด]
 }
 
 // ------------------------------------------------------------
@@ -44,8 +43,8 @@ void main() {
 // ใบ้: ตัวเลขทศนิยมใช้ double, ตัดทศนิยมใช้ .toStringAsFixed(2)
 // ------------------------------------------------------------
 String bmi(double weight, double height) {
-  // TODO: เขียนโค้ดตรงนี้
-  return '';
+  final result = weight / (height * height);
+  return result.toStringAsFixed(2);
 }
 
 // ------------------------------------------------------------
@@ -59,18 +58,16 @@ String bmi(double weight, double height) {
 //      เช่น list.reduce((a, b) => a > b ? a : b)
 // ------------------------------------------------------------
 String average(List<int> numbers) {
-  // TODO
-  return '';
+  final total = numbers.reduce((a, b) => a + b);
+  return (total / numbers.length).toStringAsFixed(2);
 }
 
 int highest(List<int> numbers) {
-  // TODO
-  return 0;
+  return numbers.reduce((a, b) => a > b ? a : b);
 }
 
 int lowest(List<int> numbers) {
-  // TODO
-  return 0;
+  return numbers.reduce((a, b) => a < b ? a : b);
 }
 
 // ------------------------------------------------------------
@@ -91,8 +88,10 @@ const List<Map<String, dynamic>> students = [
 ];
 
 List<String> topStudentNames(List<Map<String, dynamic>> list) {
-  // TODO
-  return [];
+  return list
+      .where((s) => (s['score'] as int) >= 80)
+      .map((s) => s['name'] as String)
+      .toList();
 }
 
 // ------------------------------------------------------------

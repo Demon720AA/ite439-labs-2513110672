@@ -11,11 +11,11 @@
 
 ## Checklist การติดตั้ง (ติ๊กโดยแก้ `[ ]` เป็น `[x]`)
 
-- [ ] Flutter SDK (`flutter --version` ขึ้นเลขเวอร์ชัน)
-- [ ] VS Code + extension Flutter
-- [ ] Git (`git --version` ขึ้นเลขเวอร์ชัน)
-- [ ] `flutter doctor` ขึ้น ✓ ที่ Flutter, Windows Version และ Chrome
-- [ ] Android Studio + Android SDK Command-line Tools (ช่วง B)
+- [x] Flutter SDK (`flutter --version` ขึ้นเลขเวอร์ชัน)
+- [x] VS Code + extension Flutter
+- [x] Git (`git --version` ขึ้นเลขเวอร์ชัน)
+- [x] `flutter doctor` ขึ้น ✓ ที่ Flutter, Windows Version และ Chrome
+- [x] Android Studio + Android SDK Command-line Tools (ช่วง B)
 
 ## สิ่งที่ต้องมีในโฟลเดอร์ L01 ตอนส่ง
 
@@ -54,9 +54,9 @@
 
 ถ้าไม่ติดอะไรเลย ให้เขียนว่าขั้นตอนไหนใช้เวลานานที่สุด
 
-1.
-2.
-3.
+1. -
+2. -
+3. -
 
 ## การใช้ AI ใน Lab นี้
 
